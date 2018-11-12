@@ -1,14 +1,23 @@
 <template>
-  <div id="app" style="-webkit-app-region: drag" class="flex min-h-screen">
+  <div id="app" style="-webkit-app-region: drag" class="font-sans flex min-h-screen">
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <div class="w-56 bg-grey-darkest text-white border-r border-blackblack fixed min-h-screen">
-      This is the sidebar
-    </div>
+    <sidebar></sidebar>
     <router-view/>
   </div>
 </template>
+
+<script>
+import Sidebar from './components/Sidebar.vue';
+
+export default {
+  components: {
+    sidebar: Sidebar
+  }
+}
+</script>
+
 
 <style src="./assets/main.css">
