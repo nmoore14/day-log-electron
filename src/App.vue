@@ -10,14 +10,15 @@
 </template>
 
 <script>
-import Sidebar from './components/Sidebar.vue';
+import Sidebar from "./components/Sidebar.vue";
 
 export default {
   components: {
     sidebar: Sidebar
   }
-}
+};
 </script>
 
 
 <style src="./assets/main.css">
+
