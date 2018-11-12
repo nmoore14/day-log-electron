@@ -11,6 +11,14 @@
  */
 @tailwind preflight;
 
+.clickable {
+	-webkit-app-region: no-drag;
+}
+
+.border-blackblack {
+	border-color: black;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
