@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black text-white flex-1 ml-56 p-3">
-    <div class="flex-1">
+    <div class="flex-row p-3">
       <h1 class="text-5xl text-center font-sans font-thin">Welcome</h1>
       <div class="flex">
         <todo-progress></todo-progress>
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import TodoProgress from '../components/TodoProgress.vue';
+import TodoProgress from "../components/TodoProgress.vue";
 // @ is an alias to /src
 export default {
   name: "home",
   components: {
-    todoProgress: TodoProgress
+    "todo-progress": TodoProgress
   }
 };
 </script>

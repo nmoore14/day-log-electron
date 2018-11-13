@@ -259,6 +259,7 @@ module.exports = {
     '3xl': '1.875rem',  // 30px
     '4xl': '2.25rem',   // 36px
     '5xl': '3rem',      // 48px
+    '6xl': '4.5rem'
   },
 
 
@@ -277,6 +278,7 @@ module.exports = {
   */
 
   fontWeights: {
+    'lighter': 'lighter',
     'hairline': 100,
     'thin': 200,
     'light': 300,
@@ -687,11 +689,14 @@ module.exports = {
     '4': '1rem',
     '5': '1.25rem',
     '6': '1.5rem',
+    '7': '1.75rem',
     '8': '2rem',
     '10': '2.5rem',
     '12': '3rem',
     '16': '4rem',
+    '18': '4.5rem',
     '20': '5rem',
+    '22': '5.5rem',
     '24': '6rem',
     '32': '8rem',
     '56': '14rem',
