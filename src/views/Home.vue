@@ -2,8 +2,8 @@
   <div class="bg-black text-white flex-1 ml-56 p-3">
     <div class="flex-1">
       <h1 class="text-5xl text-center font-sans font-thin">Welcome</h1>
-      <div class="flex bg-grey-lighter">
-        <todos-progress></todos-progress>
+      <div class="flex">
+        <todo-progress></todo-progress>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@ import TodoProgress from '../components/TodoProgress.vue';
 export default {
   name: "home",
   components: {
-    TodoProgress
+    todoProgress: TodoProgress
   }
 };
 </script>
