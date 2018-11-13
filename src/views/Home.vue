@@ -1,8 +1,8 @@
 <template>
   <div class="bg-black text-white flex-1 ml-56 p-3">
-    <div class="flex-row p-3">
+    <div class="flex-row">
       <h1 class="text-5xl text-center font-sans font-thin">Welcome</h1>
-      <div class="flex">
+      <div class="p-3">
         <todo-progress></todo-progress>
       </div>
     </div>

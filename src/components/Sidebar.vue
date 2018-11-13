@@ -9,7 +9,7 @@
 			</div>
 		</div>
 		<div class="sidebar-icons">
-			<router-link to="/" class="clickable sidebar-icon flex items-center px-4 py-2 mt-1 text-teal-light cursor-pointer no-underline bg-grey-darker hover:bg-grey-darker">
+			<router-link to="/" class="clickable sidebar-icon flex items-center px-4 py-2 mt-1 text-teal-light cursor-pointer no-underline hover:bg-grey-darker" active-class="bg-grey-darker" exact>
 				<span>
 					<svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" class="mt-1">
 						<path d="M1472 992v480q0 26-19 45t-45 19h-384v-384h-256v384h-384q-26 0-45-19t-19-45v-480q0-1 .5-3t.5-3l575-474 575 474q1 2 1 6zm223-69l-62 
@@ -19,7 +19,7 @@
 				</span>
 				<div class="ml-1">Home</div>
 			</router-link>
-			<router-link to="/planner" class="clickable sidebar-icon flex items-center px-4 py-2 mt-1 text-teal-light cursor-pointer no-underline hover:bg-grey-darker">
+			<router-link to="/planner" class="clickable sidebar-icon flex items-center px-4 py-2 mt-1 text-teal-light cursor-pointer no-underline hover:bg-grey-darker" active-class="bg-grey-darker" exact>
 				<span>
 					<svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1703 478q40 57 18 129l-275 906q-19 64-76.5 107.5t-122.5 43.5h-923q-77 0-148.5-53.5t-99.5-131.5q-24-67-2-127 
@@ -32,7 +32,7 @@
 				</span>
 				<div class="ml-1">Planner</div>
 			</router-link>
-			<router-link to="/yesterday" class="clickable sidebar-icon flex items-center px-4 py-2 mt-1 text-teal-light cursor-pointer no-underline hover:bg-grey-darker">
+			<router-link to="/yesterday" class="clickable sidebar-icon flex items-center px-4 py-2 mt-1 text-teal-light cursor-pointer no-underline hover:bg-grey-darker" active-class="bg-grey-darker" exact>
 				<span>
 					<svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1303 964l-512 512q-10 9-23 9t-23-9l-288-288q-9-10-9-23t9-22l46-46q9-9 22-9t23 9l220 220 
@@ -44,7 +44,7 @@
 				</span>
 				<div class="ml-1">Yesterday</div>
 			</router-link>
-			<router-link to="/todos" class="clickable sidebar-icon flex items-center px-4 py-2 mt-10 text-teal-light cursor-pointer no-underline hover:bg-grey-darker">
+			<router-link to="/todos" class="clickable sidebar-icon flex items-center px-4 py-2 mt-10 text-teal-light cursor-pointer no-underline hover:bg-grey-darker" active-class="bg-grey-darker" exact>
 				<span>
 					<svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1472 930v318q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 
