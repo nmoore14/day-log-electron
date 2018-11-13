@@ -11,8 +11,11 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "ajv": "^6.5.5",
+    "v-circle": "^0.1.3",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
+    "vue2-circle-progress": "^1.2.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -24,6 +27,8 @@
     "electron": "^2.0.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
     "tailwindcss": "^0.7.2",
     "vue-cli-plugin-electron-builder": "^1.0.0-rc.8",
     "vue-template-compiler": "^2.5.17"
