@@ -26,8 +26,13 @@ export default new Router({
       path: "/yesterday",
       name: "yesterday",
       // route level code-splitting to lazy load component
-      component: () =>
-        import("./views/Yesterday.vue")
+      component: () => import("./views/Yesterday.vue")
+    },
+    {
+      path: "/todos",
+      name: "todos",
+      // route level code-splitting to lazy load component
+      component: () => import("./views/Todos.vue")
     }
   ]
 });
