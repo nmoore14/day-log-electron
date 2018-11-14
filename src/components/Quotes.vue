@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-grey-darkest rounded text-center pt-10">
+	<div class="bg-grey-darkest rounded text-center pt-10 ml-2">
 		<h1 class="font-sans font-hairline">Quote of the day:</h1>
 		<h3 class="font-sans font-thin text-5xl">{{ myQuote.content }}</h3>
 		<p class="font-sans text-xl font-thin">~ {{ myQuote.author }}</p>

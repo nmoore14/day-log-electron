@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black text-white flex-1 ml-56 p-3">
-    <h1 class="text-5xl text-center font-sans font-thin">Welcome</h1>
+    <h1 class="text-5xl text-right font-sans font-thin">Welcome</h1>
     <div class="inline-flex width-screen">
       <app-todo-progress></app-todo-progress>
       <app-quotes></app-quotes>
