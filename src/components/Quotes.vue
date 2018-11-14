@@ -1,16 +1,20 @@
 <template>
-	<div class="bg-grey-darkest text-center ml-2">
-		<h1 class="font-sans font-hairline">Quotes</h1>
-		<p v-for="(data, index) in myQuotes" :key="index" class="p-3">{{ data }}</p>
+	<div class="bg-grey-darkest rounded text-center pt-10">
+		<h1 class="font-sans font-hairline">Quote of the day:</h1>
+		<h3 class="font-sans font-thin text-5xl">{{ myQuote.content }}</h3>
+		<p class="font-sans text-xl font-thin">~ {{ myQuote.author }}</p>
 	</div>	
 </template>
 
 <script>
-import sayings from "../assets/inspQuotes.json";
 export default {
   data() {
     return {
-      myQuotes: sayings
+      myQuote: {
+        content:
+          "Sometimes life hits you in the head with a brick. Don't loose faith.",
+        author: "Steve Jobs"
+      }
     };
   }
 };
