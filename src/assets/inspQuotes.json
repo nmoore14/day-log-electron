@@ -7,12 +7,12 @@
 				"q4": "Sometimes life hits you in the head with a brick. Don't loose faith.",
 				"q5": "Stay hungry, stay foolish."
 			},
-			"bg": {
-				"q1": "",
-				"q2": "",
-				"q3": "",
-				"q4": "",
-				"q5": ""
+			"hf": {
+				"q1": "Failure is simply the opportunity to begin again, this time more intelligently.",
+				"q2": "Quality means doing it right when no one is looking.",
+				"q3": "Don't find fault, find remedy.",
+				"q4": "You can't build a reputation on what you are going to do.",
+				"q5": "Whether you believe you can do a thing or not, you're right."
 			}
 	}]
 }
