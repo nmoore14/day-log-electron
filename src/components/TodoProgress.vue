@@ -1,5 +1,5 @@
 <template>
-<div class="container flex-1">
+<div class="container width-2/5">
   <span>
     <h3 class="font-lighter ml-10">Todos Completed</h3>
   </span>
