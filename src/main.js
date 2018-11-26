@@ -6,6 +6,8 @@ import router from "./router";
 
 Vue.use(VueFire);
 
+export const eventBus = new Vue();
+
 Vue.config.productionTip = false;
 
 new Vue({

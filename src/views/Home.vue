@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { eventBus } from '../main.js';
 import TodoProgress from "../components/TodoProgress.vue";
 import Quotes from "../components/Quotes.vue";
 import Notes from "../components/Notes.vue";
@@ -21,7 +22,13 @@ export default {
   components: {
     "app-todo-progress": TodoProgress,
     "app-quotes": Quotes,
-    "app-notes": Notes
-  }
+    "app-notes": Notes,
+    quotes: []
+  },
+  created() {
+  eventBus.$on('quotesLoad', (data) => {
+    this.quotes.push(data);
+    })
+	}
 };
 </script>

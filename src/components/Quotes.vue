@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { eventBus } from '../main.js';
 import Firebase from "firebase";
 
 let config = {
@@ -38,10 +39,13 @@ export default {
     getRandInt() {
       let randIntGen = Math.floor(Math.random() * 4) + 1 - 1;
       this.randInt = randIntGen;
+    },
+    sendQuotes() {
+      eventBus.$emit('quotesLoad', db.ref("quotes"));
     }
   },
   mounted() {
     this.getRandInt();
-  }
+  },
 };
 </script>
