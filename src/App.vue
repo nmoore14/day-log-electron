@@ -1,9 +1,5 @@
 <template>
   <div id="app" style="-webkit-app-region: drag" class="font-sans flex min-h-screen">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <sidebar></sidebar>
     <router-view/>
   </div>
