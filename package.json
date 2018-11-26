@@ -13,11 +13,13 @@
   "dependencies": {
     "ajv": "^6.5.5",
     "axios": "^0.18.0",
+    "firebase": "^5.5.9",
     "v-circle": "^0.1.3",
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.1",
     "vue2-circle-progress": "^1.2.3",
+    "vuefire": "^1.4.5",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
