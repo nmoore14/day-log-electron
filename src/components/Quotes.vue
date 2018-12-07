@@ -1,8 +1,8 @@
 <template>
-	<div class="bg-grey-darkest rounded text-center pt-10 ml-2">
-		<h1 class="font-sans font-hairline">Quote of the day:</h1>
-    <h3>{{quotes[randInt].content}}</h3>
-    <p>{{quotes[randInt].author}}</p>
+	<div class="bg-grey-darkest rounded text-center pt-10 ml-8 w-full">
+		<h1 class="font-sans font-hairline text-3xl">Quote of the day:</h1>
+    <h3 class="font-sans font-thin text-5xl">{{quotes[randInt].content}}</h3>
+    <p class="font-serif font-light text-xl">{{quotes[randInt].author}}</p>
 	</div>	
 </template>
 
