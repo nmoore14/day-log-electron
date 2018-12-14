@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     quotes: [],
-    notes: []
+    notes: [],
+    todos: []
   },
   mutations: {
     GET_QUOTES: (state, quoteLoad) => {
@@ -21,12 +22,18 @@ export default new Vuex.Store({
     },
     ADD_NOTE: (state, noteAdd) => {
       state.notes.push(noteAdd);
+    },
+    ADD_TODO: (state, todoAdd) => {
+      state.todos.push(todoAdd);
     }
   },
   actions: {},
   getters: {
     quoteCount: state => {
       return state.quotes.length;
+    },
+    todoCount: state => {
+      return state.todos.length;
     }
   }
 });

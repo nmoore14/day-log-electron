@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
@@ -24,11 +26,20 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(["todoCount"]),
     strokeOffset() {
       let percentage = this.fraction / this.total;
       let offset = this.radius * percentage;
       return this.radius - offset;
     }
+  },
+  methods: {
+    setTodoRing() {
+      this.total = this.todoCount;
+    }
+  },
+  mounted() {
+    this.setTodoRing();
   }
 };
 </script>
