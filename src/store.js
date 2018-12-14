@@ -1,7 +1,23 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from "axios";
-import VueAxios from "vue-axios";
 
 Vue.use(Vuex);
-Vue.use(VueAxios, axios);
+
+export default new Vuex.Store({
+  state: {
+    quotes: []
+  },
+  mutations: {
+    GET_QUOTES: (state, quoteLoad) => {
+      for (let i = 0; i < quoteLoad.length; i++) {
+        state.quotes.push(quoteLoad[i]);
+      }
+    }
+  },
+  actions: {},
+  getters: {
+    quoteCount: state => {
+      return state.quotes.length;
+    }
+  }
+});

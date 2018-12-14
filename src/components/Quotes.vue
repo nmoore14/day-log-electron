@@ -7,45 +7,25 @@
 </template>
 
 <script>
-import { eventBus } from '../main.js';
-import Firebase from "firebase";
-
-let config = {
-  apiKey: "AIzaSyACdz4Ho9nb98MiMXt1vWeG0VrvO-7CZuo",
-  authDomain: "day-log-aa5a4.firebaseapp.com",
-  databaseURL: "https://day-log-aa5a4.firebaseio.com",
-  projectId: "day-log-aa5a4",
-  storageBucket: "day-log-aa5a4.appspot.com",
-  messagingSenderId: "921245673762"
-};
-
-let app = Firebase.initializeApp(config);
-let db = app.database();
-let quoteRef = db.ref("quotes");
-console.log(quoteRef);
-
+import { mapState, mapGetters } from "vuex";
 export default {
   data() {
     return {
-      quoteContent: "",
-      quoteAuthor: "",
       randInt: 0
-    }
+    };
   },
-  firebase: {
-    quotes: db.ref("quotes")
+  computed: {
+    ...mapState(["quotes"]),
+    ...mapGetters(["quoteCount"])
   },
   methods: {
     getRandInt() {
-      let randIntGen = Math.floor(Math.random() * 4) + 1 - 1;
+      let randIntGen = Math.floor(Math.random() * this.quoteCount) + 1 - 1;
       this.randInt = randIntGen;
-    },
-    sendQuotes() {
-      eventBus.$emit('quotesLoad', db.ref("quotes"));
     }
   },
   mounted() {
     this.getRandInt();
-  },
+  }
 };
 </script>
