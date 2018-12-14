@@ -10,6 +10,7 @@
         cols="112"
         rows="12"
         class="bg-grey-light font-sans font-thin text-xl rounded p-2"
+        placeholder="Note Content..."
         v-model="newNote.content"
       ></textarea>
     </div>
@@ -56,9 +57,11 @@ export default {
         this.newNote.noteDate = month + "-" + day + "-" + year;
         notesRef.push(this.newNote);
         this.ADD_NOTE(this.newNote);
-        toastr.success("Note added successfully!");
+        toastr.success("Note added successfully!", "Note Success");
         this.newNote.content = "";
         this.newNote.noteDate = "";
+      } else {
+        toastr.error("Note content cannot be empty", "Note Error");
       }
     }
   },
