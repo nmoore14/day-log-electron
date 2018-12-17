@@ -20,6 +20,11 @@ export default new Vuex.Store({
         state.notes.push(noteLoad[i]);
       }
     },
+    GET_TODOS: (state, todoLoad) => {
+      for (let i = 0; i < todoLoad.length; i++) {
+        state.todos.push(todoLoad[i]);
+      }
+    },
     ADD_NOTE: (state, noteAdd) => {
       state.notes.push(noteAdd);
     },

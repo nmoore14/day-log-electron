@@ -25,13 +25,17 @@
         @click="addTodo()"
       >Add</button>
     </div>
-    <div class="flex-1 w-full h-112 overflow-auto bg-grey-light mt-2 rounded"></div>
+    <div class="flex-1 w-full h-112 overflow-auto bg-grey-light mt-2 rounded">
+			<ul v-for="(todo, index) in todos" :key="index">
+				<li>{{ todo.title }}</li>
+			</ul>
+		</div>
   </div>
 </template>
 
 <script>
 import { db } from "../config/db";
-import { mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 import toastr from "toastr";
 
 let todosRef = db.ref("todos");
@@ -53,6 +57,9 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapState(["todos"])
+  },
   methods: {
     ...mapMutations(["ADD_TODO"]),
     addTodo() {
@@ -71,9 +78,9 @@ export default {
 
       if (this.newTodo.title != "") {
         this.newTodo.dataAdded = month + "-" + day + "-" + year;
-        this.newTodo.dayEntered = daySpanStart;
+				this.newTodo.dayEntered = daySpanStart;
+				this.ADD_TODO(this.newTODO);
         todosRef.push(this.newTodo);
-        this.ADD_TODO(this.newTODO);
         toastr.success("TODO added successfully!", "TODO Success");
         this.newTodo.title = "";
         this.newTodo.body = "";
