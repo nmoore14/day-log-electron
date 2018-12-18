@@ -8,8 +8,8 @@
     <circle class="mainCircle" cx="60" cy="60" r="54" fill="none" stroke="#4dc0b5" stroke-width="6" stroke-dasharray="339.292" :stroke-dashoffset="strokeOffset" /> 
   </svg>
   <span class="absolute -ml-34 mt-16">
-    <h4 class="text-6xl font-thin">{{ fraction }}</h4>
-    <p class="-mt-3">/ {{ total }}</p>
+    <h4 class="text-6xl font-thin">{{ completeCount }}</h4>
+    <p class="-mt-3">/ {{ todoCount }}</p>
   </span>
 </div>
 </template>
@@ -26,9 +26,9 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["todoCount"]),
+    ...mapGetters(["todoCount", "completeCount"]),
     strokeOffset() {
-      let percentage = this.fraction / this.total;
+      let percentage = this.completeCount / this.todoCount;
       let offset = this.radius * percentage;
       return this.radius - offset;
     }

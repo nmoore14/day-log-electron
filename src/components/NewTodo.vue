@@ -25,11 +25,29 @@
         @click="addTodo()"
       >Add</button>
     </div>
-    <div class="flex-1 w-full h-112 overflow-auto bg-grey-light mt-2 rounded">
-			<ul v-for="(todo, index) in todos" :key="index">
-				<li>{{ todo.title }}</li>
-			</ul>
-		</div>
+    <div
+      class="flex-1 flex-col w-full h-112 overflow-auto bg-grey-light mt-2 rounded items-center justify-center"
+    >
+      <div
+        class="flex-1 flex bg-white font-sans text-grey-darkest m-2 p-2 rounded shadow-md"
+        v-for="(todo, index) in todos"
+        :key="index"
+      >
+        <template v-if="!todo.completed">
+          <div class="w-5/6">
+            <h1 class="font-light text-teal text-4xl">{{ todo.title }}</h1>
+            <h3 class="font-thin text-grey-darkest text-xl">{{ todo.body }}</h3>
+            <p class="text-sm text-grey-light">Added: {{ todo.dateAdded }}</p>
+          </div>
+          <div class="w-1/6">
+            <button
+              class="w-full h-full bg-transparent text-teal-dark font-light text-2xl hover:text-white py-2 px-4 border border-teal hover:border-transparent rounded"
+              id="complete-btn"
+            >Complete</button>
+          </div>
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -77,9 +95,9 @@ export default {
       var daySpanStart = Math.floor(diff / oneDay);
 
       if (this.newTodo.title != "") {
-        this.newTodo.dataAdded = month + "-" + day + "-" + year;
-				this.newTodo.dayEntered = daySpanStart;
-				this.ADD_TODO(this.newTODO);
+        this.newTodo.dateAdded = month + "-" + day + "-" + year;
+        this.newTodo.dayEntered = daySpanStart;
+        this.ADD_TODO(this.newTODO);
         todosRef.push(this.newTodo);
         toastr.success("TODO added successfully!", "TODO Success");
         this.newTodo.title = "";
@@ -94,6 +112,10 @@ export default {
 
 <style scoped>
 #todo-submit-btn {
+  background: linear-gradient(90deg, #2196f3, #4dbfb4);
+}
+
+#complete-btn:hover {
   background: linear-gradient(90deg, #2196f3, #4dbfb4);
 }
 </style>

@@ -21,6 +21,7 @@ export default new Vuex.Store({
       }
     },
     GET_TODOS: (state, todoLoad) => {
+      state.todos = [];
       for (let i = 0; i < todoLoad.length; i++) {
         state.todos.push(todoLoad[i]);
       }
@@ -39,6 +40,15 @@ export default new Vuex.Store({
     },
     todoCount: state => {
       return state.todos.length;
+    },
+    completeCount: state => {
+      let compCount = 0;
+      for (let i = 0; i < state.todos.length; i++) {
+        if (state.todos[i].completed) {
+          compCount++;
+        }
+      }
+      return compCount;
     }
   }
 });
