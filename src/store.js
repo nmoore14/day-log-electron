@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     quotes: [],
     notes: [],
-    todos: []
+    todos: [],
+    todosCompleted: []
   },
   mutations: {
     GET_QUOTES: (state, quoteLoad) => {
@@ -22,9 +23,15 @@ export default new Vuex.Store({
     },
     GET_TODOS: (state, todoLoad) => {
       state.todos = [];
+      state.todosCompleted = [];
       for (let i = 0; i < todoLoad.length; i++) {
-        state.todos.push(todoLoad[i]);
+        if (!todoLoad[i].completed) {
+          state.todos.push(todoLoad[i]);
+        } else {
+          state.todosCompleted.push(todoLoad[i]);
+        }
       }
+      console.log(state.todos);
     },
     ADD_NOTE: (state, noteAdd) => {
       state.notes.push(noteAdd);
@@ -39,16 +46,10 @@ export default new Vuex.Store({
       return state.quotes.length;
     },
     todoCount: state => {
-      return state.todos.length;
+      return state.todos.length + state.todosCompleted.length;
     },
     completeCount: state => {
-      let compCount = 0;
-      for (let i = 0; i < state.todos.length; i++) {
-        if (state.todos[i].completed) {
-          compCount++;
-        }
-      }
-      return compCount;
+      return state.todosCompleted.length;
     }
   }
 });

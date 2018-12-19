@@ -43,6 +43,7 @@
             <button
               class="w-full h-full bg-transparent text-teal-dark font-light text-2xl hover:text-white py-2 px-4 border border-teal hover:border-transparent rounded"
               id="complete-btn"
+              @click="completeUpdate(todo['.key'], index)"
             >Complete</button>
           </div>
         </template>
@@ -60,7 +61,7 @@ let todosRef = db.ref("todos");
 
 export default {
   firebase: {
-    todos: todosRef
+    todosDB: todosRef
   },
   data() {
     return {
@@ -105,6 +106,43 @@ export default {
       } else {
         toastr.error("TODO title cannot be empty", "TODO Error");
       }
+    },
+    completeUpdate(key, index) {
+      let d = new Date();
+      let month = d.getMonth();
+      let day = d.getDay();
+      let year = d.getFullYear();
+      let now = month + " - " + day + " - " + year;
+
+      let start = new Date(d.getFullYear(), 0, 0);
+      let diff =
+        d -
+        start +
+        (start.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000;
+      let oneDay = 1000 * 60 * 60 * 24;
+      let daySpanEnd = Math.floor(diff / oneDay);
+
+      let finalSpan = this.calculateSpan(
+        this.todos[index].dayEntered,
+        daySpanEnd
+      );
+
+      todosRef.child(key).update({
+        completed: true,
+        dateCompleted: now,
+        dayCompleted: daySpanEnd,
+        span: finalSpan
+      });
+      toastr.success("TODO updated successfully!", "TODO Success");
+    },
+    calculateSpan(start, end) {
+      let spanFinal = 0;
+      if (end < start) {
+        spanFinal = 365 - start + end;
+      } else {
+        spanFinal = end - start;
+      }
+      return spanFinal;
     }
   }
 };
