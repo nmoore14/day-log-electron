@@ -31,7 +31,6 @@ export default new Vuex.Store({
           state.todosCompleted.push(todoLoad[i]);
         }
       }
-      console.log(state.todos);
     },
     ADD_NOTE: (state, noteAdd) => {
       state.notes.push(noteAdd);
