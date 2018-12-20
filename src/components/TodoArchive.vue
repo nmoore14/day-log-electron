@@ -16,7 +16,7 @@
             height="40"
             viewBox="0 0 1792 1792"
             xmlns="http://www.w3.org/2000/svg"
-            class="m-1 hover:cursor-pointer hover:bg-red-lighter p-2 rounded"
+            class="m-1 hover:bg-red-lighter p-2 rounded"
             @click="removeTodo(todo['.key'], index)"
           >
             <path
@@ -77,5 +77,9 @@ export default {
 
 ul:nth-child(odd) {
   background-color: #b8c2cc;
+}
+
+svg:hover {
+  cursor: pointer;
 }
 </style>
