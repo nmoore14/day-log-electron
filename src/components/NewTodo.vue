@@ -82,10 +82,11 @@ export default {
   methods: {
     ...mapMutations(["ADD_TODO"]),
     addTodo() {
-      var d = new Date();
-      var month = d.getMonth();
-      var day = d.getDay();
-      var year = d.getFullYear();
+      let d = new Date();
+      let month = d.getMonth() + 1;
+      let day = d.getDate();
+      let year = d.getFullYear();
+      let now = `${month}-${day}-${year}`;
 
       var start = new Date(d.getFullYear(), 0, 0);
       var diff =
@@ -96,7 +97,7 @@ export default {
       var daySpanStart = Math.floor(diff / oneDay);
 
       if (this.newTodo.title != "") {
-        this.newTodo.dateAdded = month + "-" + day + "-" + year;
+        this.newTodo.dateAdded = now;
         this.newTodo.dayEntered = daySpanStart;
         this.ADD_TODO(this.newTODO);
         todosRef.push(this.newTodo);
@@ -109,8 +110,8 @@ export default {
     },
     completeUpdate(key, index) {
       let d = new Date();
-      let month = d.getMonth();
-      let day = d.getDay();
+      let month = d.getMonth() + 1;
+      let day = d.getDate();
       let year = d.getFullYear();
       let now = `${month}-${day}-${year}`;
 
