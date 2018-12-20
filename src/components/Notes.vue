@@ -49,12 +49,14 @@ export default {
       this.GET_NOTES(this.notesStored);
     },
     addNote() {
-      var d = new Date();
-      var month = d.getMonth();
-      var day = d.getDay();
-      var year = d.getFullYear();
+      let d = new Date();
+      let month = d.getMonth();
+      let day = d.getDay();
+      let year = d.getFullYear();
+      let now = `${month}-${day}-${year}`;
+
       if (this.newNote.content != "") {
-        this.newNote.noteDate = month + "-" + day + "-" + year;
+        this.newNote.noteDate = now;
         notesRef.push(this.newNote);
         this.ADD_NOTE(this.newNote);
         toastr.success("Note added successfully!", "Note Success");

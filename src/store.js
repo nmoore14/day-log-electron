@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     quotes: [],
     notes: [],
+    archivedNotes: [],
     todos: [],
     todosCompleted: []
   },
@@ -18,8 +19,20 @@ export default new Vuex.Store({
     },
     GET_NOTES: (state, noteLoad) => {
       state.notes = [];
+      state.archivedNotes = [];
+      let d = new Date();
+      let month = d.getMonth();
+      let day = d.getDay();
+      let year = d.getFullYear();
+      let now = `${month}-${day}-${year}`;
+
+      state.notes = [];
       for (let i = 0; i < noteLoad.length; i++) {
-        state.notes.push(noteLoad[i]);
+        if (noteLoad[i].noteDate == now) {
+          state.notes.push(noteLoad[i]);
+        } else {
+          state.archivedNotes.push(noteLoad[i]);
+        }
       }
     },
     GET_TODOS: (state, todoLoad) => {

@@ -112,7 +112,7 @@ export default {
       let month = d.getMonth();
       let day = d.getDay();
       let year = d.getFullYear();
-      let now = month + " - " + day + " - " + year;
+      let now = `${month}-${day}-${year}`;
 
       let start = new Date(d.getFullYear(), 0, 0);
       let diff =

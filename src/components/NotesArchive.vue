@@ -5,14 +5,21 @@
     >
       <h2 class="flex-1 w-2/3 p-2 font-sans font-light">Notes</h2>
     </div>
-    <div class="listContianer mt-16">
-      <ul class="list-reset rounded" v-for="(note, index) in notes" :key="index">
-        <li class="flex-col w-full p-2">
-          <h2 class="flex-1 w-full font-sans font-thin text-3xl text-teal-darker">{{ note.noteDate }}</h2>
-          <p class="flex-1 w-full font-sans font-light text-lg text-grey-darkest">{{ note.content}}</p>
-        </li>
-      </ul>
-    </div>
+		<template v-if="archivedNotes.length > 0">
+			<div class="listContianer mt-16">
+				<ul class="list-reset rounded" v-for="(note, index) in archivedNotes" :key="index">
+					<li class="flex-col w-full p-2">
+						<h2 class="flex-1 w-full font-sans font-thin text-3xl text-teal-darker">{{ note.noteDate }}</h2>
+						<p class="flex-1 w-full font-sans font-light text-lg text-grey-darkest">{{ note.content}}</p>
+					</li>
+				</ul>
+			</div>
+		</template>
+		<template v-else>
+			<div class="listContianer mt-16">
+				<h2 class="flex-1 w-full font-sans font-thin text-3xl text-teal-darker">No Archived Notes to list.</h2>
+			</div>
+		</template>
   </div>
 </template>
 
@@ -27,7 +34,7 @@ export default {
     notesDB: notesRef
   },
   computed: {
-    ...mapState(["notes"])
+    ...mapState(["archivedNotes"])
   }
 };
 </script>
