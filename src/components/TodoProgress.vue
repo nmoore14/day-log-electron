@@ -1,7 +1,7 @@
 <template>
 <div class="width-2/5">
   <span>
-    <h3 class="font-lighter ml-10">Todos Completed</h3>
+    <h3 class="font-lighter ml-16">Todos Status</h3>
   </span>
   <svg width="240" height="240" viewBox="0 0 120 120">
     <circle cx="60" cy="60" r="54" fill="none" stroke="#3d4852" stroke-width="4" />
