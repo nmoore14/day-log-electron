@@ -17,6 +17,7 @@ export default new Vuex.Store({
       }
     },
     GET_NOTES: (state, noteLoad) => {
+      state.notes = [];
       for (let i = 0; i < noteLoad.length; i++) {
         state.notes.push(noteLoad[i]);
       }

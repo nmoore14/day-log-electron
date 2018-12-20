@@ -13,7 +13,8 @@ import { mapMutations } from "vuex";
 export default {
   firebase: {
     quotes: db.ref("quotes"),
-    todoDB: db.ref("todos")
+    todoDB: db.ref("todos"),
+    notesDB: db.ref("notes")
   },
   components: {
     sidebar: Sidebar
@@ -26,17 +27,21 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(["GET_QUOTES", "GET_TODOS"]),
+    ...mapMutations(["GET_QUOTES", "GET_TODOS", "GET_NOTES"]),
     mergeQuotes() {
       this.GET_QUOTES(this.quotesStored);
     },
     mergeTodos() {
       this.GET_TODOS(this.todosStored);
+    },
+    mergeNotes() {
+      this.GET_NOTES(this.notesStored);
     }
   },
   mounted() {
     this.quotesStored = this.quotes;
     this.todosStored = this.todoDB;
+    this.notesStored = this.notesDB;
   },
   watch: {
     quotesStored: function() {
@@ -47,6 +52,11 @@ export default {
     todosStored: function() {
       if (this.todosStored.length > 0) {
         this.mergeTodos();
+      }
+    },
+    notesStored: function() {
+      if (this.notesStored.length > 0) {
+        this.mergeNotes();
       }
     }
   }
