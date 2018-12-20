@@ -4,6 +4,9 @@
       class="flex w-1/2 text-grey-darkest fixed text-center text-grey-lightest p-2 bg-teal rounded"
     >
       <h2 class="flex-1 w-2/3 p-2 font-sans font-light">Notes</h2>
+			<template v-if="archivedNotes.length > 5" class="flex-1 w-1/3">
+				<p class="pt-3 font-sans font-thin">Scroll to see more</p>
+			</template>
     </div>
 		<template v-if="archivedNotes.length > 0">
 			<div class="listContianer mt-16">
