@@ -1,0 +1,54 @@
+{
+	"quotes": [
+		{
+			"id": "1",
+			"content": "I want to make a ding in the universe.",
+			"autor": "Steve Jobs"
+		},
+		{
+			"id": "2",
+			"content": "Innovation distinguishes between a leader and a follwer",
+			"autor": "Steve Jobs"
+		},
+		{
+			"id": "3",
+			"content": "Design is not only what it looks like and feels like. Design is how it works.",
+			"autor": "Steve Jobs"
+		}, 
+		{
+			"id": "4",
+			"content": "Sometimes life hits you in the head with a brick. Don't loose faith.",
+			"autor": "Steve Jobs"
+		}, 
+		{
+			"id": "5",
+			"content": "Stay hungry, stay foolish.",
+			"autor": "Steve Jobs"
+		},
+		{
+			"id": "6",
+			"content": "Failure is simply the opportunity to begin again, this time more intelligently.",
+			"author": "Henry Ford"
+		}, 
+		{
+			"id": "7",
+			"content": "Quality means doing it right when no one is looking.",
+			"author": "Henry Ford"
+		}, 
+		{
+			"id": "8",
+			"content": "Don't find fault, find remedy.",
+			"author": "Henry Ford"
+		},
+		{
+			"id": "9",
+			"content": "You can't build a reputation on what you are going to do.",
+			"author": "Henry Ford"
+		},
+		{
+			"id": "10",
+			"content": "Whether you believe you can do a thing or not, you're right.",
+			"author": "Henry Ford"
+		}
+	]
+}
